@@ -64,3 +64,7 @@ The skill auto-triggers at the right moments — the main agent convenes the cou
 On SWE-bench Lite (dev, 23 tasks), giving an official Sonnet main agent the council consultation raised resolved tasks from **8 → 12**: **net +4, zero regressions** (every task the baseline solved is still solved by the council version, plus 4 more) — beating every single-backend run.
 
 ![Council benchmark on SWE-bench Lite dev](./resources/benchmark-swebench-dev.png)
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
