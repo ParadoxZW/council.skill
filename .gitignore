@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# council runtime artifacts (consultation queries / councilor opinions, per round)
+.council/
+
+# A user's REAL council-def.sh holds API keys — never commit it. Only the .example.sh ships.
+council-def.sh
+
+# council.sh per-round temp working dir (if it ever lands in-repo)
+council-out.*

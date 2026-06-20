@@ -1,0 +1,9 @@
+{
+  "_comment": "Central config for the /council skill. launch.sh reads chief_model; council.sh reads councilors[]. Each councilor name must be a shell function defined in ~/.local/bin/council-def.sh (which holds that backend's base_url / model / token). If this file is missing/unreadable or a key is absent, the scripts fall back to built-in defaults (chief_model=Opus, councilors=glm/ds/kimi).",
+  "chief_model": "Opus",
+  "councilors": [
+    "council-cc-glm",
+    "council-codex-gpt",
+    "council-cc-kimi"
+  ]
+}
