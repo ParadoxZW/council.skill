@@ -12,7 +12,7 @@
 
 ## 效果
 
-在 SWE-bench Lite(dev,23 题)上,给官方 Sonnet 主线 agent 接上 council 会商,解决数从 **8 → 12**:**Sonnet +4、零回退**(baseline 解出的题 council 版全部保留,另外多解 4 题),反超所有单后端裸跑。
+在 SWE-bench Lite(dev,23 题)上,给官方 Sonnet 主线 agent 接上 council 会商,解决数从 **8 → 12**:**Sonnet +4、零回退**(baseline 解出的题 council 版全部保留,另外多解 4 题),反超所有单后端裸跑;也超过同主 agent 配 Claude Code 内置 `/advisor`(单顾问,Opus 4.8)的 10——多模型协商胜过单一顾问。
 
 ![Council benchmark on SWE-bench Lite dev](./resources/benchmark-swebench-dev.png)
 

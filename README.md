@@ -12,7 +12,7 @@ It's inspired by Claude Code's built-in `/advisor`, with two essential extension
 
 ## Benchmarking
 
-On SWE-bench Lite (dev, 23 tasks), giving an official Sonnet main agent the council consultation raised resolved tasks from **8 → 12**: **Sonnet +4, zero regressions** (every task the baseline solved is still solved by the council version, plus 4 more) — beating every single-backend run.
+On SWE-bench Lite (dev, 23 tasks), giving an official Sonnet main agent the council consultation raised resolved tasks from **8 → 12**: **Sonnet +4, zero regressions** (every task the baseline solved is still solved by the council version, plus 4 more) — beating every single-backend run, and also the same agent on Claude Code's built-in `/advisor` (single Opus 4.8 advisor) at 10: multi-model deliberation beats a single advisor.
 
 ![Council benchmark on SWE-bench Lite dev](./resources/benchmark-swebench-dev.png)
 
