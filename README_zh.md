@@ -10,6 +10,32 @@
 - **可混搭不同 model + harness**:councilor 可以是任意模型后端(官方 / 非官方中转),甚至可以是**完全不同的 harness**(如 OpenAI 的 Codex CLI)。你可以同时让 GLM、Kimi、Codex(gpt-5.5)在一次会商里发声。
 
 
+## 效果
+
+在 SWE-bench Lite(dev,23 题)上,给官方 Sonnet 主线 agent 接上 council 会商,解决数从 **8 → 12**:**Sonnet +4、零回退**(baseline 解出的题 council 版全部保留,另外多解 4 题),反超所有单后端裸跑。
+
+![Council benchmark on SWE-bench Lite dev](./resources/benchmark-swebench-dev.png)
+
+
+## 快速开始
+
+### 安装与配置
+
+如果你是人类，请阅读 [quick_start_for_human_zh](./resources/quick_start_for_human_zh.md) 。
+
+你也可以让你的 Claude Code 帮你安装，只需要在对话界面发送
+
+```text
+帮我安装这个 skill，https://github.com/ParadoxZW/council.skill
+```
+
+如果你是 agent（收到了用户让你安装这个 skill 的请求），请阅读 [quick_start_for_agent](./resources/quick_start_for_agent.md) ，并帮助用户完成安装。
+
+### 使用
+
+skill 会在合适时机自动触发——主线 agent 在**开工定方案前、产出完成前、卡住或准备改方向时**召集 council;你也可显式要求 agent "consult the council"，或者发送 "/council" 命令。
+
+
 ## 设计简介
 ### 核心设计原则
 
@@ -41,29 +67,6 @@
 
 </details>
 
-## 快速开始
-
-### 安装与配置
-
-如果你是人类，请阅读 [quick_start_for_human_zh](./resources/quick_start_for_human_zh.md) 。
-
-你也可以让你的 Claude Code 帮你安装，只需要在对话界面发送
-
-```text
-帮我安装这个 skill，https://github.com/ParadoxZW/council.skill
-```
-
-如果你是 agent（收到了用户让你安装这个 skill 的请求），请阅读 [quick_start_for_agent](./resources/quick_start_for_agent.md) ，并帮助用户完成安装。
-
-### 使用
-
-skill 会在合适时机自动触发——主线 agent 在**开工定方案前、产出完成前、卡住或准备改方向时**召集 council;你也可显式要求 agent "consult the council"，或者发送 "/council" 命令。
-
-## 效果
-
-在 SWE-bench Lite(dev,23 题)上,给官方 Sonnet 主线 agent 接上 council 会商,解决数从 **8 → 12**:**净 +4、零回退**(baseline 解出的题 council 版全部保留,另外多解 4 题),反超所有单后端裸跑。
-
-![Council benchmark on SWE-bench Lite dev](./resources/benchmark-swebench-dev.png)
 
 ## 许可证
 

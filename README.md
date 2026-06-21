@@ -10,6 +10,32 @@ It's inspired by Claude Code's built-in `/advisor`, with two essential extension
 - **Mix-and-match model + harness**: a councilor can run on any model backend (official or third-party relay), or even on a **completely different harness** (e.g. OpenAI's Codex CLI). You can have GLM, Kimi, and Codex (gpt-5.5) all weigh in on the same round.
 
 
+## Benchmarking
+
+On SWE-bench Lite (dev, 23 tasks), giving an official Sonnet main agent the council consultation raised resolved tasks from **8 → 12**: **Sonnet +4, zero regressions** (every task the baseline solved is still solved by the council version, plus 4 more) — beating every single-backend run.
+
+![Council benchmark on SWE-bench Lite dev](./resources/benchmark-swebench-dev.png)
+
+
+## Quick start
+
+### Install & configure
+
+If you're a human, read [quick_start_for_human_en](./resources/quick_start_for_human_en.md) (中文: [quick_start_for_human_zh](./resources/quick_start_for_human_zh.md)).
+
+You can also let your Claude Code install it for you — just send, in the chat:
+
+```text
+Install this skill for me: https://github.com/ParadoxZW/council.skill
+```
+
+If you're an agent (you received a request to install this skill), read [quick_start_for_agent](./resources/quick_start_for_agent.md) and help the user through it.
+
+### Usage
+
+The skill auto-triggers at the right moments — the main agent convenes the council **before settling on a plan, before declaring an output done, when stuck, or when about to change approach**; you can also explicitly ask it to "consult the council", or send the `/council` command.
+
+
 ## Design overview
 ### Core principles
 
@@ -41,29 +67,6 @@ main agent (L1)
 
 </details>
 
-## Quick start
-
-### Install & configure
-
-If you're a human, read [quick_start_for_human_en](./resources/quick_start_for_human_en.md) (中文: [quick_start_for_human_zh](./resources/quick_start_for_human_zh.md)).
-
-You can also let your Claude Code install it for you — just send, in the chat:
-
-```text
-Install this skill for me: https://github.com/ParadoxZW/council.skill
-```
-
-If you're an agent (you received a request to install this skill), read [quick_start_for_agent](./resources/quick_start_for_agent.md) and help the user through it.
-
-### Usage
-
-The skill auto-triggers at the right moments — the main agent convenes the council **before settling on a plan, before declaring an output done, when stuck, or when about to change approach**; you can also explicitly ask it to "consult the council", or send the `/council` command.
-
-## Results
-
-On SWE-bench Lite (dev, 23 tasks), giving an official Sonnet main agent the council consultation raised resolved tasks from **8 → 12**: **net +4, zero regressions** (every task the baseline solved is still solved by the council version, plus 4 more) — beating every single-backend run.
-
-![Council benchmark on SWE-bench Lite dev](./resources/benchmark-swebench-dev.png)
 
 ## License
 
